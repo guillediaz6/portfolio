@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guillermo Díaz · Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="cursor"></div>
+  <div id="cursor-trail"></div>
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-logo">LOADING</div>
+    <div class="loader-bar-wrap"><div class="loader-bar" id="loader-bar"></div></div>
+    <div class="loader-text" id="loader-text">INICIALIZANDO SISTEMAS...</div>
+  </div>
+
+  <!-- INTRO -->
+  <div id="intro-screen">
+    <canvas id="intro-canvas"></canvas>
+    <div class="intro-content">
+      <div class="profile-container" id="profile-container">
+        <div class="profile-glow"></div>
+        <div class="profile-ring"></div>
+        <div class="profile-img" id="profile-img">
+          <img src="sprites/logo2.jpg" alt="Guillermo Díaz">
+        </div>
+      </div>
+      <div class="intro-name">Guillermo</div>  <!-- Quitada la clase glitch -->
+      <div class="intro-subtitle">FRONTEND DEVELOPER · UI/UX · CREATIVE CODER</div>
+      <div class="click-hint">[ CLICK TO ENTER ]</div>
+    </div>
+  </div>
+
+  <!-- PORTFOLIO -->
+  <div id="main-portfolio">
+    <nav id="main-nav">
+      <a href="#hero" class="nav-logo">TP.</a>
+      <ul class="nav-links">
+        <li><a href="#about">SOBRE MÍ</a></li>
+        <li><a href="#skills">SKILLS</a></li>
+        <li><a href="#projects">PROYECTOS</a></li>
+        <li><a href="#experience">FORMACIÓN</a></li>
+        <li><a href="#contact">CONTACTO</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+      <span class="section-label">// HERO_INIT</span>
+      <div class="hero-eyebrow" id="hero-eyebrow">◈ BIENVENIDO A MI UNIVERSO DIGITAL ◈</div>
+      <h1 class="hero-title" id="hero-title">
+        <span class="line1">CREANDO</span>
+        <span class="line2">EXPERIENCIAS</span>
+      </h1>
+      <p class="hero-sub" id="hero-sub">DONDE EL CÓDIGO SE CONVIERTE EN ARTE</p>
+      <div class="hero-cta" id="hero-cta">
+        <a href="#projects" class="btn-primary"><span>VER PROYECTOS →</span></a>
+        <a href="#contact" class="btn-secondary">CONTACTAR</a>
+      </div>
+      <div class="scroll-indicator" id="scroll-indicator">
+        <span class="scroll-text">SCROLL</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <span class="section-label">// ABOUT_PROTOCOL</span>
+      <span class="section-number">01</span>
+      <div class="about-grid">
+        <div data-reveal="fade-right">
+          <div class="about-card">
+            <div class="about-avatar">
+              <div class="cube">
+                <div class="face front" style="background-image: url('sprites/logo2.jpg');"></div>
+                <div class="face back" style="background-image: url('sprites/logo2.jpg');"></div>
+                <div class="face right" style="background-image: url('sprites/logo2.jpg');"></div>
+                <div class="face left" style="background-image: url('sprites/logo2.jpg');"></div>
+                <div class="face top" style="background-image: url('sprites/logo2.jpg');"></div>
+                <div class="face bottom" style="background-image: url('sprites/logo2.jpg');"></div>
+              </div>
+            </div>
+            <div class="about-stats">
+              <div class="stat-item"><span class="stat-number" data-count="3">0</span><span class="stat-label">Años codando</span></div>
+              <div class="stat-item"><span class="stat-number" data-count="15">0</span><span class="stat-label">Proyectos</span></div>
+              <div class="stat-item"><span class="stat-number" data-count="8">0</span><span class="stat-label">Tecnologías</span></div>
+              <div class="stat-item"><span class="stat-number" data-count="99">0</span><span class="stat-label">Café/día ☕</span></div>
+            </div>
+          </div>
+        </div>
+        <div data-reveal="fade-left">
+          <h2 class="section-title">HOLA,<br>SOY <span class="accent">Guillermo Díaz</span></h2>
+          <p class="about-text">Soy un <strong>desarrollador frontend estudiante</strong> apasionado por construir experiencias digitales que nadie espera. Llevo años aprendiendo por mi cuenta, rompiendo cosas y construyéndolas mejor.</p>
+          <p class="about-text">Me obsesiona el <strong>diseño de interfaces</strong>, las animaciones y transformar ideas en código que impacta. No espero a que me den oportunidades — las construyo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS CAROUSEL -->
+    <section id="skills">
+      <span class="section-label">// SKILL_MATRIX</span>
+      <span class="section-number">02</span>
+      <div style="text-align:center;width:100%" data-reveal="fade-up">
+        <h2 class="section-title" style="text-align:center">ARSENAL<br><span class="accent">TÉCNICO_</span></h2>
+      </div>
+      <div class="carousel-wrapper" data-reveal="fade-up" style="transition-delay:.1s">
+        <div class="carousel-track" id="carousel-1"></div>
+      </div>
+      <div class="carousel-wrapper" data-reveal="fade-up" style="transition-delay:.2s;margin-top:-4px">
+        <div class="carousel-track reverse" id="carousel-2"></div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <span class="section-label">// PROJECT_ARCHIVE</span>
+      <span class="section-number">03</span>
+      <div style="width:100%; max-width:1300px">
+        <div style="text-align:center; margin-bottom:60px" data-reveal="fade-up">
+          <h2 class="section-title" style="text-align:center">ALGO DE<br><span class="accent">MI TRABAJO_</span></h2>
+        </div>
+        <div class="projects-grid">
+          <!-- Proyecto 1: Post para Instagram -->
+          <div class="project-card tilt-card" data-reveal="fade-up" style="transition-delay:.1s">
+            <div class="project-preview">
+              <div class="project-preview-bg" style="background-image: url('ruta/a/tu-imagen1.jpg');"></div>
+              <div class="project-overlay"></div>
+              <div class="project-tags">
+                <span class="project-tag">FEATURED</span>
+                <span class="project-tag">DISEÑO</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link-btn">↗</a>
+                <a href="#" class="project-link-btn">⌥</a>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-number">Post para Instagram</div>
+              <div class="project-title">POST ATRACTIVO</div>
+              <p class="project-desc">Diseño visual impactante para redes sociales, combinando tipografía y elementos gráficos modernos.</p>
+            </div>
+            <div class="project-footer">
+              <div class="project-stack">
+                <span class="stack-dot">Photoshop</span><span class="stack-dot">·</span><span class="stack-dot">Illustrator</span>
+              </div>
+              <span class="featured-badge">★ DESTACADO</span>
+            </div>
+          </div>
+          <!-- Proyecto 2: Página web para taller -->
+          <div class="project-card tilt-card" data-reveal="fade-up" style="transition-delay:.2s">
+            <div class="project-preview">
+              <div class="project-preview-bg" style="background-image: url('ruta/a/tu-imagen2.jpg');"></div>
+              <div class="project-overlay"></div>
+              <div class="project-tags">
+                <span class="project-tag">WEB</span><span class="project-tag">RESPONSIVE</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link-btn">↗</a>
+                <a href="#" class="project-link-btn">⌥</a>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-number">Páginas web únicas</div>
+              <div class="project-title">WEB TALLER</div>
+              <p class="project-desc">Sitio web corporativo para taller mecánico, con diseño moderno y funcionalidades de contacto y reservas.</p>
+            </div>
+            <div class="project-footer">
+              <div class="project-stack">
+                <span class="stack-dot">React</span><span class="stack-dot">·</span><span class="stack-dot">Node.js</span><span class="stack-dot">·</span><span class="stack-dot">MongoDB</span>
+              </div>
+            </div>
+          </div>
+          <!-- Proyecto 3: Videojuego -->
+          <div class="project-card tilt-card" data-reveal="fade-up" style="transition-delay:.3s">
+            <div class="project-preview">
+              <div class="project-preview-bg" style="background-image: url('sprites/game.png');"></div>
+              <div class="project-overlay"></div>
+              <div class="project-tags">
+                <span class="project-tag">G_RUNNER</span><span class="project-tag">3D</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link-btn">↗</a>
+                <a href="#" class="project-link-btn">⌥</a>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-number">Videojuegos</div>
+              <div class="project-title">PHANTOM RUNNER</div>
+              <p class="project-desc">Juego de plataformas 3D con mecánicas de velocidad y entornos generados proceduralmente.</p>
+            </div>
+            <div class="project-footer">
+              <div class="project-stack">
+                <span class="stack-dot">Unity</span><span class="stack-dot">·</span><span class="stack-dot">C#</span><span class="stack-dot">·</span><span class="stack-dot">Blender</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STUDENT FORMATION -->
+    <section id="experience">
+      <span class="section-label">// FORMATION_LOG</span>
+      <span class="section-number">04</span>
+      <div style="width:100%; max-width:1100px">
+        <div data-reveal="fade-up" style="margin-bottom:60px">
+          <h2 class="section-title">POR QUÉ<br><span class="accent">ELEGIRME_</span></h2>
+        </div>
+        <div class="exp-grid">
+          <!-- Tarjetas de valor -->
+          <div class="value-card" data-reveal="fade-up" style="transition-delay:.05s">
+            <span class="value-icon">🔥</span>
+            <div class="value-title">AUTODIDACTA TOTAL</div>
+            <p class="value-desc">Todo lo que sé lo aprendí construyendo. Proyectos reales, errores reales, soluciones reales.</p>
+          </div>
+          <div class="value-card" data-reveal="fade-up" style="transition-delay:.1s">
+            <span class="value-icon">⚡</span>
+            <div class="value-title">CURVA DE APRENDIZAJE BRUTAL</div>
+            <p class="value-desc">Aprendo tecnologías nuevas en días, no semanas. Si tu stack necesita algo que no domino hoy, lo dominaré mañana.</p>
+          </div>
+          <div class="value-card" data-reveal="fade-up" style="transition-delay:.15s">
+            <span class="value-icon">🎨</span>
+            <div class="value-title">OJO DE DISEÑADOR</div>
+            <p class="value-desc">Entiendo la diferencia entre código que funciona y código que impacta. Construyo ambas.</p>
+          </div>
+          <div class="value-card" data-reveal="fade-up" style="transition-delay:.2s">
+            <span class="value-icon">🚀</span>
+            <div class="value-title">HAMBRE DE CRECER</div>
+            <p class="value-desc">Un junior con actitud vale más que un senior sin ella. Llego fresco y motivado.</p>
+          </div>
+
+          <!-- Formación DAM -->
+          <div class="formation-card" data-reveal="fade-up" style="transition-delay:.25s">
+            <div style="flex-shrink:0">
+              <div class="formation-year">2024</div>
+              <div class="formation-badge">Finalizado</div>
+            </div>
+            <div>
+              <div class="formation-degree">DESARROLLO DE APLICACIONES MULTIPLATAFORMA</div>
+              <div class="formation-school">◈ IES EL RINCON</div>
+              <p class="formation-desc">Formación técnica en desarrollo web full stack, complementada con práctica autónoma en proyectos personales.</p>
+              <div class="formation-skills">
+                <span class="f-skill">React</span><span class="f-skill">JavaScript</span><span class="f-skill">Node.js</span>
+                <span class="f-skill">SQL</span><span class="f-skill">APIs REST</span><span class="f-skill">Git</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formación Ciberseguridad -->
+          <div class="formation-card" data-reveal="fade-up" style="transition-delay:.3s">
+            <div style="flex-shrink:0">
+              <div class="formation-year">2026</div>
+              <div class="formation-badge">Próximamente</div>
+            </div>
+            <div>
+              <div class="formation-degree">ESPECIALIZACIÓN CIBERSEGURIDAD</div>
+              <div class="formation-school">◈ IES EL RINCON</div>
+              <p class="formation-desc">Especialización en seguridad informática, ethical hacking y protección de sistemas.</p>
+              <div class="formation-skills">
+                <!-- Vacío por ahora -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <span class="section-label">// CONTACT_PROTOCOL</span>
+      <span class="section-number">05</span>
+      <div class="contact-center" data-reveal="scale">
+        <h2 class="section-title" style="text-align:center">INICIAR<br><span class="accent">CONEXIÓN_</span></h2>
+        <p class="contact-tagline">¿TIENES UN PROYECTO? ¿UNA OPORTUNIDAD? ¿UNA IDEA LOCA?<br>ESCRÍBEME. RESPONDO EN MENOS DE 24H.</p>
+
+        <a href="mailto:guillermodiazm13@gmail.com" class="gmail-btn">
+          <svg class="gmail-icon" viewBox="0 0 48 48">
+            <path fill="#EA4335" d="M5 36.6V11.4L24 25z"/>
+            <path fill="#FBBC04" d="M43 11.4v25.2l-19-13.6z"/>
+            <path fill="#34A853" d="M43 36.6H5l19-13.4z"/>
+            <path fill="#4285F4" d="M5 11.4l19 13.6 19-13.6H5z"/>
+            <path fill="#C5221F" d="M5 11.4V8.5L24 22.1 43 8.5v2.9L24 25z"/>
+          </svg>
+          <span>ENVIAR EMAIL</span>
+        </a>
+
+        <div class="contact-alts">
+          <a href="https://github.com/guillediaz6" target="_blank" class="alt-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.04c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            GITHUB
+          </a>
+          <a href="https://www.linkedin.com/in/guillermo-diaz-medina-51a284367/" target="_blank" class="alt-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM3.56 20.45h3.56V9H3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            LINKEDIN
+          </a>
+          <!-- Instagram añadido -->
+          <a href="https://instagram.com/tuusuario" target="_blank" class="alt-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.31.975.975 1.248 2.242 1.31 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.31 3.608-.975.975-2.242 1.248-3.608 1.31-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.31-.975-.975-1.248-2.242-1.31-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.334-2.633 1.31-3.608.975-.975 2.242-1.248 3.608-1.31 1.266-.058 1.646-.07 4.85-.07zm0-2.163C8.756 0 8.332.014 7.052.072 5.197.157 3.355.786 1.964 2.177.573 3.568-.056 5.41.028 7.267.086 8.547.1 8.971.1 12s-.014 3.453-.072 4.733c-.084 1.857.455 3.699 1.846 5.09 1.391 1.391 3.233 1.93 5.09 1.846 1.28.058 1.704.072 4.733.072s3.453-.014 4.733-.072c1.857-.084 3.699-.455 5.09-1.846 1.391-1.391 1.93-3.233 1.846-5.09.058-1.28.072-1.704.072-4.733s-.014-3.453-.072-4.733c-.084-1.857-.455-3.699-1.846-5.09C20.645.786 18.803.157 16.946.073 15.666.015 15.242.001 12 .001z"/><circle cx="18.406" cy="5.594" r="1.44"/><path d="M12 5.838A6.162 6.162 0 0 0 5.838 12 6.162 6.162 0 0 0 12 18.162 6.162 6.162 0 0 0 18.162 12 6.162 6.162 0 0 0 12 5.838zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/></svg>
+            INSTAGRAM
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      
+      <p class="footer-copy">© 2026 Guillermo Diaz · CRAFTED WITH ⚡ AND INFINITE COFFEE</p>
+    </footer>
+  </div>
+
+  <!-- Progress bar -->
+  <div id="pb"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
