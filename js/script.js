@@ -383,5 +383,52 @@ const sObs = new IntersectionObserver(entries => {
 }, { threshold: 0.4 });
 document.querySelectorAll('section[id]').forEach(s => sObs.observe(s));
 
-console.log('%c⚡ PORTFOLIO 2026', 'color:#00f5ff;font-family:monospace;font-size:1.5rem;font-weight:bold');l e t   l b I m a g e s   =   [ ] ;   l e t   l b I n d e x   =   0 ;   f u n c t i o n   o p e n L i g h t b o x ( i m a g e s ,   i n d e x = 0 )   {   l b I m a g e s   =   i m a g e s ;   l b I n d e x   =   i n d e x ;   d o c u m e n t . g e t E l e m e n t B y I d ( ' l i g h t b o x - i m g ' ) . s r c   =   l b I m a g e s [ l b I n d e x ] ;   d o c u m e n t . g e t E l e m e n t B y I d ( ' l i g h t b o x ' ) . c l a s s L i s t . a d d ( ' s h o w ' ) ;   }   f u n c t i o n   c l o s e L i g h t b o x ( )   {   d o c u m e n t . g e t E l e m e n t B y I d ( ' l i g h t b o x ' ) . c l a s s L i s t . r e m o v e ( ' s h o w ' ) ;   }   f u n c t i o n   c h a n g e L i g h t b o x I m a g e ( d i r )   {   l b I n d e x   + =   d i r ;   i f ( l b I n d e x   <   0 )   l b I n d e x   =   l b I m a g e s . l e n g t h   -   1 ;   e l s e   i f ( l b I n d e x   > =   l b I m a g e s . l e n g t h )   l b I n d e x   =   0 ;   d o c u m e n t . g e t E l e m e n t B y I d ( ' l i g h t b o x - i m g ' ) . s r c   =   l b I m a g e s [ l b I n d e x ] ;   }   f u n c t i o n   n e x t S l i d e ( e ,   b t n )   {   e . s t o p P r o p a g a t i o n ( ) ;   c o n s t   c o n t a i n e r   =   b t n . p a r e n t E l e m e n t ;   c o n s t   s l i d e s   =   c o n t a i n e r . q u e r y S e l e c t o r A l l ( ' . s l i d e ' ) ;   l e t   c u r r e n t   =   0 ;   s l i d e s . f o r E a c h ( ( s ,   i )   = >   {   i f ( s . c l a s s L i s t . c o n t a i n s ( ' a c t i v e ' ) )   c u r r e n t   =   i ;   s . c l a s s L i s t . r e m o v e ( ' a c t i v e ' ) ;   } ) ;   c u r r e n t   =   ( c u r r e n t   +   1 )   %   s l i d e s . l e n g t h ;   s l i d e s [ c u r r e n t ] . c l a s s L i s t . a d d ( ' a c t i v e ' ) ;   }   f u n c t i o n   p r e v S l i d e ( e ,   b t n )   {   e . s t o p P r o p a g a t i o n ( ) ;   c o n s t   c o n t a i n e r   =   b t n . p a r e n t E l e m e n t ;   c o n s t   s l i d e s   =   c o n t a i n e r . q u e r y S e l e c t o r A l l ( ' . s l i d e ' ) ;   l e t   c u r r e n t   =   0 ;   s l i d e s . f o r E a c h ( ( s ,   i )   = >   {   i f ( s . c l a s s L i s t . c o n t a i n s ( ' a c t i v e ' ) )   c u r r e n t   =   i ;   s . c l a s s L i s t . r e m o v e ( ' a c t i v e ' ) ;   } ) ;   c u r r e n t   =   ( c u r r e n t   -   1   +   s l i d e s . l e n g t h )   %   s l i d e s . l e n g t h ;   s l i d e s [ c u r r e n t ] . c l a s s L i s t . a d d ( ' a c t i v e ' ) ;   }  
- 
+console.log('%c⚡ PORTFOLIO 2026', 'color:#00f5ff;font-family:monospace;font-size:1.5rem;font-weight:bold');
+
+// ── LIGHTBOX & SLIDER ──
+let lbImages = [];
+let lbIndex = 0;
+
+window.openLightbox = function(images, index=0) {
+  lbImages = images;
+  lbIndex = index;
+  document.getElementById('lightbox-img').src = lbImages[lbIndex];
+  document.getElementById('lightbox').classList.add('show');
+};
+
+window.closeLightbox = function() {
+  document.getElementById('lightbox').classList.remove('show');
+};
+
+window.changeLightboxImage = function(dir) {
+  lbIndex += dir;
+  if(lbIndex < 0) lbIndex = lbImages.length - 1;
+  else if(lbIndex >= lbImages.length) lbIndex = 0;
+  document.getElementById('lightbox-img').src = lbImages[lbIndex];
+};
+
+window.nextSlide = function(e, btn) {
+  e.stopPropagation();
+  const container = btn.parentElement;
+  const slides = container.querySelectorAll('.slide');
+  let current = 0;
+  slides.forEach((s, i) => {
+    if(s.classList.contains('active')) current = i;
+    s.classList.remove('active');
+  });
+  current = (current + 1) % slides.length;
+  slides[current].classList.add('active');
+};
+
+window.prevSlide = function(e, btn) {
+  e.stopPropagation();
+  const container = btn.parentElement;
+  const slides = container.querySelectorAll('.slide');
+  let current = 0;
+  slides.forEach((s, i) => {
+    if(s.classList.contains('active')) current = i;
+    s.classList.remove('active');
+  });
+  current = (current - 1 + slides.length) % slides.length;
+  slides[current].classList.add('active');
+};
