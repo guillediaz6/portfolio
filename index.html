@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guillermo Díaz · Portfolio</title>
+  <title>GDM DEVELOPER · Desarrollo Web Profesional</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link
     href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;800&display=swap"
@@ -14,8 +14,7 @@
 
 <body>
 
-  <div id="cursor"></div>
-  <div id="cursor-trail"></div>
+
   <canvas id="bg-canvas"></canvas>
 
   <!-- LOADER -->
@@ -35,11 +34,11 @@
         <div class="profile-glow"></div>
         <div class="profile-ring"></div>
         <div class="profile-img" id="profile-img">
-          <img src="assets/sprites/logo2.jpg" alt="Guillermo Díaz">
+          <img src="assets/sprites/logo2.png" alt="GDM Developer">
         </div>
       </div>
-      <div class="intro-name">GUILLEDIAZ6</div>
-      <div class="intro-subtitle">FULL STACK DEVELOPER · UI/UX · CREATIVE CODER</div>
+      <div class="intro-name">GDM.DEVELOPER</div>
+      <div class="intro-subtitle">SOLUCIONES WEB PARA EMPRESAS · DESARROLLO A MEDIDA · UI/UX</div>
       <div class="click-hint">[ CLICK TO ENTER ]</div>
     </div>
   </div>
@@ -47,11 +46,17 @@
   <!-- PORTFOLIO -->
   <div id="main-portfolio">
     <nav id="main-nav">
-      <a href="#hero" class="nav-logo">guillediaz6</a>
-      <ul class="nav-links">
+      <a href="#hero" class="nav-logo" style="display:flex; align-items:center;">
+        <img src="assets/sprites/logo2.png" alt="GDM Developer" style="height: 40px; width: auto; object-fit: contain; transform: scale(2.2); transform-origin: left center;">
+      </a>
+      <div class="hamburger" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="nav-links" id="nav-links">
         <li><a href="#about">SOBRE MÍ</a></li>
         <li><a href="#skills">SKILLS</a></li>
-        <li><a href="#projects">PROYECTOS</a></li>
         <li><a href="#experience">FORMACIÓN</a></li>
         <li><a href="#contact">CONTACTO</a></li>
       </ul>
@@ -59,38 +64,34 @@
 
     <!-- HERO -->
     <section id="hero">
-      <span class="section-label">// HERO_INIT</span>
-      <div class="hero-eyebrow" id="hero-eyebrow">◈ BIENVENIDO A MI UNIVERSO DIGITAL ◈</div>
+      
+      <div class="hero-eyebrow" id="hero-eyebrow">◈ IMPULSA TU NEGOCIO EN DIGITAL ◈</div>
       <h1 class="hero-title" id="hero-title">
-        <span class="line1">CREANDO</span>
-        <span class="line2">EXPERIENCIAS</span>
+        <span class="line1">DESARROLLO</span>
+        <span class="line2">WEB PROFESIONAL</span>
       </h1>
-      <p class="hero-sub" id="hero-sub">DONDE EL CÓDIGO SE CONVIERTE EN ARTE</p>
+      <p class="hero-sub" id="hero-sub">SOLUCIONES DIGITALES QUE ESCALAN TU EMPRESA</p>
       <div class="hero-cta" id="hero-cta">
-        <a href="#projects" class="btn-primary"><span>VER PROYECTOS →</span></a>
-        <a href="#contact" class="btn-secondary">CONTACTAR</a>
-      </div>
-      <div class="scroll-indicator" id="scroll-indicator">
-        <span class="scroll-text">SCROLL</span>
-        <div class="scroll-line"></div>
+        <a href="#contact" class="btn-primary"><span>INICIAR PROYECTO →</span></a>
+        <a href="#about" class="btn-secondary">CONOCER MÁS</a>
       </div>
     </section>
 
     <!-- ABOUT -->
     <section id="about">
-      <span class="section-label">// ABOUT_PROTOCOL</span>
+      
       <span class="section-number">01</span>
       <div class="about-grid">
         <div data-reveal="fade-right">
           <div class="about-card">
             <div class="about-avatar">
               <div class="cube">
-                <div class="face front" style="background-image: url('assets/sprites/logo2.jpg');"></div>
-                <div class="face back" style="background-image: url('assets/sprites/logo2.jpg');"></div>
-                <div class="face right" style="background-image: url('assets/sprites/logo2.jpg');"></div>
-                <div class="face left" style="background-image: url('assets/sprites/logo2.jpg');"></div>
-                <div class="face top" style="background-image: url('assets/sprites/logo2.jpg');"></div>
-                <div class="face bottom" style="background-image: url('assets/sprites/logo2.jpg');"></div>
+                <div class="face front" style="background-image: url('assets/sprites/logo2.png');"></div>
+                <div class="face back" style="background-image: url('assets/sprites/logo2.png');"></div>
+                <div class="face right" style="background-image: url('assets/sprites/logo2.png');"></div>
+                <div class="face left" style="background-image: url('assets/sprites/logo2.png');"></div>
+                <div class="face top" style="background-image: url('assets/sprites/logo2.png');"></div>
+                <div class="face bottom" style="background-image: url('assets/sprites/logo2.png');"></div>
               </div>
             </div>
             <div class="about-stats">
@@ -102,139 +103,30 @@
           </div>
         </div>
         <div data-reveal="fade-left">
-          <h2 class="section-title">HOLA,<br>SOY <span class="accent">Guillermo Díaz</span></h2>
-          <p class="about-text">Soy un <strong>desarrollador full stack estudiante</strong> apasionado por construir
-            experiencias digitales que nadie espera. Llevo tiempo aprendiendo por mi cuenta, rompiendo cosas y
-            construyéndolas mejor.</p>
-          <p class="about-text">Me apasiona el <strong>diseño de interfaces</strong>, las animaciones y transformar
-            ideas en código que impacta. No espero a que me den oportunidades — las construyo.</p>
+          <h2 class="section-title">HOLA,<br>SOY <span class="accent">GDM DEVELOPER</span></h2>
+          <p class="about-text">Soy un <strong>desarrollador web y programador</strong> especializado en ayudar a empresas a potenciar su presencia digital. Creo páginas web corporativas y plataformas a medida que generan resultados reales.</p>
+          <p class="about-text">Mi objetivo es ofrecer <strong>soluciones tecnológicas</strong> que optimicen tus procesos y conecten con tus clientes. Transformo las necesidades de tu negocio en herramientas digitales eficientes y escalables.</p>
         </div>
       </div>
     </section>
 
-    <!-- SKILLS CAROUSEL -->
-    <!-- SKILLS CAROUSEL (único) -->
+    <!-- SKILLS GRID -->
     <section id="skills">
-      <span class="section-label">// SKILL_MATRIX</span>
+      
       <span class="section-number">02</span>
       <div style="text-align:center;width:100%" data-reveal="fade-up">
         <h2 class="section-title" style="text-align:center">ARSENAL<br><span class="accent">TÉCNICO_</span></h2>
       </div>
-      <div class="carousel-wrapper" data-reveal="fade-up" style="transition-delay:.1s">
-        <div class="carousel-track" id="carousel-skills"></div>
+      <div class="skills-grid-container" data-reveal="fade-up" style="transition-delay:.1s">
+        <div id="interactive-skills-grid"></div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects">
-      <span class="section-label">// PROJECT_ARCHIVE</span>
-      <span class="section-number">03</span>
-      <div style="width:100%; max-width:1300px">
-        <div style="text-align:center; margin-bottom:60px" data-reveal="fade-up">
-          <h2 class="section-title" style="text-align:center">ALGO DE<br><span class="accent">MI TRABAJO_</span></h2>
-        </div>
-        <div class="projects-grid">
-          <!-- Proyecto 1: AI Reservation Chatbot -->
-          <div class="project-card tilt-card" data-reveal="fade-up" style="transition-delay:.1s">
-            <div class="project-preview has-slider">
-              <!-- Slider Images -->
-              <div class="slider-container"
-                onclick="openLightbox(['assets/sprites/chatbot.png', 'assets/sprites/reservas.png'])">
-                <div class="project-preview-bg slide active"
-                  style="background-image: url('assets/sprites/chatbot.png');"></div>
-                <div class="project-preview-bg slide" style="background-image: url('assets/sprites/reservas.png');">
-                </div>
-              </div>
 
-              <!-- Slider Controls -->
-              <button class="slider-btn prev-btn" onclick="prevSlide(event, this)">&#10094;</button>
-              <button class="slider-btn next-btn" onclick="nextSlide(event, this)">&#10095;</button>
-
-              <div class="project-overlay pointer-none"></div>
-              <div class="project-tags pointer-none">
-                <span class="project-tag">AI / FULL STACK</span>
-                <span class="project-tag">FEATURED</span>
-              </div>
-            </div>
-            <div class="project-body">
-              <div class="project-number">Sistema Inteligente</div>
-              <div class="project-title">RESERVATION BOT</div>
-              <p class="project-desc">Un chatbot impulsado por IA para gestionar reservas, consultar disponibilidad y
-                enviar solicitudes a un panel de administración. Desarrollado con una arquitectura Flask y persistencia
-                de estado.</p>
-            </div>
-            <div class="project-footer">
-              <div class="project-stack">
-                <span class="stack-dot">Python</span><span class="stack-dot">·</span><span
-                  class="stack-dot">Flask</span><span class="stack-dot">·</span><span class="stack-dot">LLM
-                  API</span><span class="stack-dot">·</span><span class="stack-dot">JS</span>
-              </div>
-            </div>
-          </div>
-          <!-- Proyecto 2: Página web para taller -->
-          <div class="project-card tilt-card" data-reveal="fade-up" style="transition-delay:.2s">
-            <div class="project-preview has-slider">
-              <!-- Slider Images -->
-              <div class="slider-container"
-                onclick="openLightbox(['assets/sprites/garaje1.png', 'assets/sprites/garaje2.png'])">
-                <div class="project-preview-bg slide active"
-                  style="background-image: url('assets/sprites/garaje1.png');"></div>
-                <div class="project-preview-bg slide" style="background-image: url('assets/sprites/garaje2.png');">
-                </div>
-              </div>
-
-              <!-- Slider Controls -->
-              <button class="slider-btn prev-btn" onclick="prevSlide(event, this)">&#10094;</button>
-              <button class="slider-btn next-btn" onclick="nextSlide(event, this)">&#10095;</button>
-
-              <div class="project-overlay pointer-none"></div>
-              <div class="project-tags">
-                <span class="project-tag">WEB</span><span class="project-tag">RESPONSIVE</span>
-              </div>
-              <!-- project-links eliminados -->
-            </div>
-            <div class="project-body">
-              <div class="project-number">Páginas web únicas</div>
-              <div class="project-title">WEB TALLER</div>
-              <p class="project-desc">Sitio web corporativo para taller mecánico, con diseño moderno y funcionalidades
-                de contacto y reservas.</p>
-            </div>
-            <div class="project-footer">
-              <div class="project-stack">
-                <span class="stack-dot">HTML</span><span class="stack-dot">·</span><span
-                  class="stack-dot">JAVASCRIPT</span><span class="stack-dot">·</span><span class="stack-dot">CSS</span>
-              </div>
-            </div>
-          </div>
-          <!-- Proyecto 3: Videojuego -->
-          <div class="project-card tilt-card" data-reveal="fade-up" style="transition-delay:.3s">
-            <div class="project-preview" style="cursor: zoom-in;" onclick="openLightbox(['assets/sprites/game.png'])">
-              <div class="project-preview-bg" style="background-image: url('assets/sprites/game.png');"></div>
-              <div class="project-overlay pointer-none"></div>
-              <div class="project-tags">
-                <span class="project-tag">GAME</span><span class="project-tag">2D</span>
-              </div>
-              <!-- project-links eliminados -->
-            </div>
-            <div class="project-body">
-              <div class="project-number">Videojuegos</div>
-              <div class="project-title">G_RUNNER</div>
-              <p class="project-desc">Juego de coches 2D con mecánicas de velocidad y movimiento</p>
-            </div>
-            <div class="project-footer">
-              <div class="project-stack">
-                <span class="stack-dot">Unity</span><span class="stack-dot">·</span><span
-                  class="stack-dot">C#</span><span class="stack-dot">·</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- STUDENT FORMATION -->
     <section id="experience">
-      <span class="section-label">// FORMATION_LOG</span>
+      
       <span class="section-number">04</span>
       <div style="width:100%; max-width:1100px">
         <div data-reveal="fade-up" style="margin-bottom:60px">
@@ -243,27 +135,24 @@
         <div class="exp-grid">
           <!-- Tarjetas de valor -->
           <div class="value-card" data-reveal="fade-up" style="transition-delay:.05s">
-            <span class="value-icon">🔥</span>
-            <div class="value-title">AUTODIDACTA TOTAL</div>
-            <p class="value-desc">Todo lo que sé lo aprendí construyendo. Proyectos reales, errores reales, soluciones
-              reales.</p>
+            <span class="value-icon">📈</span>
+            <div class="value-title">CRECIMIENTO DIGITAL</div>
+            <p class="value-desc">Páginas web diseñadas no solo para verse bien, sino para captar clientes y aumentar las conversiones de tu empresa.</p>
           </div>
           <div class="value-card" data-reveal="fade-up" style="transition-delay:.1s">
-            <span class="value-icon">⚡</span>
-            <div class="value-title">CURVA DE APRENDIZAJE BRUTAL</div>
-            <p class="value-desc">Aprendo tecnologías nuevas en días, no semanas. Si tu stack necesita algo que no
-              domino hoy, lo dominaré mañana.</p>
+            <span class="value-icon">🤝</span>
+            <div class="value-title">SOCIO TECNOLÓGICO</div>
+            <p class="value-desc">Más que un proveedor, trabajo contigo para entender tu modelo de negocio y ofrecerte la mejor herramienta web.</p>
           </div>
           <div class="value-card" data-reveal="fade-up" style="transition-delay:.15s">
-            <span class="value-icon">🎨</span>
-            <div class="value-title">OJO DE DISEÑADOR</div>
-            <p class="value-desc">Entiendo la diferencia entre código que funciona y código que impacta. Construyo
-              ambas.</p>
+            <span class="value-icon">🛠️</span>
+            <div class="value-title">DESARROLLO A MEDIDA</div>
+            <p class="value-desc">Sistemas personalizados, desde webs corporativas hasta plataformas de gestión interna totalmente adaptables.</p>
           </div>
           <div class="value-card" data-reveal="fade-up" style="transition-delay:.2s">
-            <span class="value-icon">🚀</span>
-            <div class="value-title">HAMBRE DE CRECER</div>
-            <p class="value-desc">Un junior con actitud vale más que un senior sin ella. Llego fresco y motivado.</p>
+            <span class="value-icon">🔒</span>
+            <div class="value-title">SOPORTE Y SEGURIDAD</div>
+            <p class="value-desc">Garantizo que tu plataforma esté siempre operativa, segura y escalable a medida que tu negocio crece.</p>
           </div>
 
           <!-- Formación DAM -->
@@ -289,7 +178,7 @@
           <div class="formation-card" data-reveal="fade-up" style="transition-delay:.3s">
             <div style="flex-shrink:0">
               <div class="formation-year">2026</div>
-              <div class="formation-badge">Próximamente</div>
+              <div class="formation-badge">En curso</div>
             </div>
             <div>
               <div class="formation-degree">ESPECIALIZACIÓN CIBERSEGURIDAD</div>
@@ -307,12 +196,11 @@
 
     <!-- CONTACT -->
     <section id="contact">
-      <span class="section-label">// CONTACT_PROTOCOL</span>
+      
       <span class="section-number">05</span>
       <div class="contact-center" data-reveal="scale">
         <h2 class="section-title" style="text-align:center">INICIAR<br><span class="accent">CONEXIÓN_</span></h2>
-        <p class="contact-tagline">¿TIENES UN PROYECTO? ¿UNA OPORTUNIDAD? ¿UNA IDEA LOCA?<br>ESCRÍBEME. RESPONDO EN
-          MENOS DE 24H.</p>
+        <p class="contact-tagline">¿LISTO PARA DIGITALIZAR TU EMPRESA Y AUMENTAR TUS VENTAS?<br>HABLEMOS DE TU PRÓXIMO PROYECTO WEB.</p>
 
         <a href="mailto:guillermodiazm13@gmail.com" class="gmail-btn">
           <svg class="gmail-icon" viewBox="0 0 48 48">
@@ -356,17 +244,11 @@
 
     <!-- FOOTER -->
     <footer>
-      <p class="footer-copy">© 2026 Guillermo Diaz · CRAFTED WITH ⚡ AND INFINITE COFFEE</p>
+      <p class="footer-copy">© 2026 GDM DEVELOPER</p>
     </footer>
   </div>
 
-  <!-- LIGHTBOX MODAL -->
-  <div id="lightbox" class="lightbox">
-    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-    <button class="lightbox-btn lb-prev" onclick="changeLightboxImage(-1)">&#10094;</button>
-    <img class="lightbox-content" id="lightbox-img">
-    <button class="lightbox-btn lb-next" onclick="changeLightboxImage(1)">&#10095;</button>
-  </div>
+
 
   <!-- Progress bar -->
   <div id="pb"></div>

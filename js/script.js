@@ -1,21 +1,3 @@
-// ── CURSOR ──
-const cur = document.getElementById('cursor'),
-  tr = document.getElementById('cursor-trail');
-let mx = 0, my = 0, tx = 0, ty = 0;
-
-document.addEventListener('mousemove', (e) => {
-  mx = e.clientX; my = e.clientY;
-  cur.style.left = mx + 'px';
-  cur.style.top  = my + 'px';
-});
-
-(function at() {
-  tx += (mx - tx) * 0.12;
-  ty += (my - ty) * 0.12;
-  tr.style.left = tx + 'px';
-  tr.style.top  = ty + 'px';
-  requestAnimationFrame(at);
-})();
 
 // ── PROGRESS BAR ──
 const pb = document.getElementById('pb');
@@ -149,183 +131,50 @@ document.getElementById('intro-screen').addEventListener('click', triggerExplode
 setTimeout(() => { if (document.getElementById('intro-screen').style.display !== 'none') triggerExplode(); }, 5000);
 
 
-// ═══════════════════════════════════════════════════
-// CARRUSEL INFINITO — siempre lleno, sin saltos
-// ═══════════════════════════════════════════════════
+// SKILLS DATA
 const skillsData = [
-  {
-    name: 'HTML5', color: '#E34F26',
-    svg: `<svg viewBox="0 0 24 24"><path fill="#E34F26" d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/></svg>`,
-  },
-  {
-    name: 'CSS3', color: '#1572B6',
-    svg: `<svg viewBox="0 0 24 24"><path fill="#1572B6" d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.288l5.373-1.53L18.59 4.413z"/></svg>`,
-  },
-  {
-    name: 'JavaScript', color: '#F7DF1E',
-    svg: `<svg viewBox="0 0 24 24"><path fill="#F7DF1E" d="M0 0h24v24H0z"/><path d="M11.85 18.23c-.22.1-.55.19-.8.19-1.22 0-1.6-.74-1.88-1.87l-1.34.61c.42 1.63 1.35 2.5 3.12 2.5 1 0 1.94-.36 2.45-1.08.38-.54.6-1.25.6-2.2v-7.23H12.6v7c0 1.05-.18 1.48-.75 1.55l.03.53zm9.64-1.67c0 1.9-.99 3.15-3.32 3.15-1.57 0-2.6-.68-3.13-2.11l1.32-.76c.32.89.92 1.48 1.83 1.48 1.25 0 1.77-.6 1.77-1.46 0-1.03-.68-1.45-2.22-2.14l-.45-.2c-2.02-.91-3.17-2.1-3.17-3.9 0-1.66 1.13-3.13 3.1-3.13 2.05 0 2.9.96 3.4 2.2l-1.32.74c-.26-.74-.78-1.48-1.92-1.48-1.2 0-1.52.84-1.52 1.4 0 .99.8 1.25 2.15 1.82l.33.15c2.14.96 3.17 2.06 3.17 3.94l-.02.3z" fill="#000"/></svg>`,
-  },
-  {
-    name: 'Java', color: '#007396',
-    svg: `<svg viewBox="0 0 24 24"><path fill="#007396" d="M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.323.646-4.709 2.019-10.657-.118-6.945-1.149zm-.6-2.696s-1.028.761.542.924c2.032.209 3.636.227 6.413-.308 0 0 .384.389.987.602-5.694 1.661-12.044.133-7.942-1.218zM14.61 12.94c1.162 1.337-.305 2.54-.305 2.54s2.95-1.523 1.595-3.43c-1.265-1.78-2.235-2.664 3.017-5.713 0 0-8.24 2.058-4.307 6.603zm6.462 7.462s.679.56-.748.992c-2.712.822-11.288 1.07-13.672.033-.856-.373.75-.89 1.255-.998.527-.114.828-.093.828-.093-.953-.672-6.158 1.317-2.643 1.887 9.58 1.553 17.462-.7 14.98-1.821zM9.292 13.21s-4.362 1.037-1.544 1.414c1.19.16 3.56.123 5.77-.062 1.805-.152 3.618-.478 3.618-.478s-.637.272-1.098.586c-4.43 1.165-12.986.622-10.522-.568 2.082-1.002 3.776-.892 3.776-.892zM16.28 17.56c4.505-2.34 2.421-4.589.968-4.287-.357.074-.516.138-.516.138s.133-.208.386-.298c2.883-1.014 5.101 2.99-.93 4.575 0 0 .07-.062.092-.128z"/><path fill="#007396" d="M13.71 0s2.5 2.502-2.37 6.352c-3.898 3.081-.888 4.838 0 6.846-2.273-2.051-3.94-3.858-2.821-5.54 1.643-2.468 6.2-3.664 5.19-7.658zM8.456 22.964c4.32.276 10.956-.153 11.116-2.198 0 0-.302.775-3.572 1.391-3.688.695-8.239.614-10.937.169 0 0 .553.457 3.393.638z"/></svg>`,
-  },
-  {
-    name: 'Git', color: '#F05032',
-    svg: `<svg viewBox="0 0 24 24"><path fill="#F05032" d="M23.546 10.93L13.067.452a1.55 1.55 0 00-2.188 0L8.708 2.627l2.76 2.76a1.838 1.838 0 012.327 2.341l2.658 2.66a1.838 1.838 0 01-.49 3.512 1.84 1.84 0 01-1.795-3.016L11.622 8.44v6.335a1.84 1.84 0 01.487 3.505 1.838 1.838 0 01-2.202-2.201 1.84 1.84 0 011.023-1.283V8.37a1.833 1.833 0 01-.998-2.413L7.198 3.198.454 9.942a1.549 1.549 0 000 2.188l10.48 10.477a1.55 1.55 0 002.188 0l10.424-10.424a1.55 1.55 0 000-2.253"/></svg>`,
-  },
-  {
-    name: 'C++', color: '#00599C',
-    svg: `<svg viewBox="0 0 24 24"><path fill="#00599C" d="M22.394 6c-.168-.29-.398-.543-.652-.69L12.926.255c-.567-.335-1.324-.335-1.89 0L2.258 5.31c-.569.336-.92.96-.92 1.64v9.82c0 .68.351 1.304.92 1.64l8.778 5.176c.567.335 1.323.335 1.89 0l8.778-5.176c.569-.336.92-.96.92-1.64V7.65c0-.34-.094-.66-.254-.94zM12 17.62c-3.104 0-5.62-2.517-5.62-5.62 0-3.104 2.516-5.62 5.62-5.62 2.587 0 4.774 1.75 5.433 4.14h-2.688c-.561-1.127-1.702-1.89-2.97-1.89-1.86 0-3.37 1.51-3.37 3.37 0 1.86 1.51 3.37 3.37 3.37 1.267 0 2.408-.762 2.97-1.89h2.688c-.66 2.39-2.846 4.14-5.433 4.14zM16.75 10.5v1.25H15.5v1.25h1.25v1.25h1.25v-1.25h1.25v-1.25h-1.25V10.5z"/></svg>`,
-  },
-  {
-    name: 'Docker', color: '#2496ED',
-    svg: `<svg viewBox="0 0 24 24"><path fill="#2496ED" d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.184-.186h-2.12a.186.186 0 00-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 00-.75.748 11.376 11.376 0 00.692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983.003 1.963-.086 2.93-.266a12.248 12.248 0 003.823-1.389c.98-.567 1.86-1.288 2.61-2.136 1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288Z"/></svg>`,
-  },
+  { name: 'Java', icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" style="width: 50px; height: 50px;" alt="Java">' },
+  { name: 'HTML', icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" style="width: 50px; height: 50px;" alt="HTML5">' },
+  { name: 'CSS', icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" style="width: 50px; height: 50px;" alt="CSS3">' },
+  { name: 'JavaScript', icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" style="width: 50px; height: 50px;" alt="JavaScript">' },
+  { name: 'Git', icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" style="width: 50px; height: 50px;" alt="Git">' },
+  { name: 'Python', icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" style="width: 50px; height: 50px;" alt="Python">' }
 ];
 
-(function initCarousel() {
-  const track   = document.getElementById('carousel-skills');
-  const wrapper = track && track.closest('.carousel-wrapper');
-  if (!track || !wrapper) return;
+function initSkills() {
+  const grid = document.getElementById('interactive-skills-grid');
+  if (!grid) return;
+  
+  skillsData.forEach(skill => {
+    const card = document.createElement('div');
+    card.className = 'skill-card tilt-card';
+    card.innerHTML = `
+      <div class="skill-icon" style="filter: none;">${skill.icon}</div>
+      <div class="skill-name">${skill.name}</div>
+    `;
+    grid.appendChild(card);
+  });
+}
+document.addEventListener('DOMContentLoaded', initSkills);
 
-  // Tamaño de cada chip — DEBE coincidir con el CSS
-  const CHIP_W = 112;
-  const GAP    = 20;
-  const STEP   = CHIP_W + GAP; // 132px por chip
+// Hamburger menu toggle
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+const navLinksItems = document.querySelectorAll('.nav-links li a');
 
-  // ── Crear un chip DOM con sus listeners ──
-  function makeChip(s) {
-    const el = document.createElement('div');
-    el.className = 'skill-chip';
-    el.innerHTML = `<div class="skill-chip-logo">${s.svg}</div>
-                    <div class="skill-chip-name">${s.name}</div>`;
-    el.addEventListener('mouseenter', () => {
-      el.style.borderColor = s.color + 'cc';
-      el.style.boxShadow   = `0 14px 40px rgba(0,0,0,.6), 0 0 24px ${s.color}55, inset 0 0 16px ${s.color}11`;
-      el.querySelector('.skill-chip-name').style.color = s.color;
-      const svg = el.querySelector('svg');
-      if (svg) svg.style.filter = `drop-shadow(0 0 7px ${s.color}99)`;
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
+
+  navLinksItems.forEach(item => {
+    item.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('active');
     });
-    el.addEventListener('mouseleave', () => {
-      el.style.borderColor = '';
-      el.style.boxShadow   = '';
-      el.querySelector('.skill-chip-name').style.color = '';
-      const svg = el.querySelector('svg');
-      if (svg) svg.style.filter = '';
-    });
-    return el;
-  }
-
-  // ── Llenar el track con suficientes chips ──
-  // Regla: el track debe tener al menos (ancho_pantalla × 4) de contenido.
-  // Así, aunque offset sea grande, siempre hay chips visibles.
-  // El loop resetea cada vez que avanzamos 1 "set" (= N tecnologías × STEP).
-  function buildTrack() {
-    track.innerHTML = '';
-
-    const screenW  = window.innerWidth;
-    const setW     = skillsData.length * STEP;          // ancho de 1 set completo
-    // Cuántas copias del set necesitamos para cubrir 4× la pantalla como mínimo
-    const copies   = Math.max(6, Math.ceil((screenW * 4) / setW) + 1);
-
-    for (let i = 0; i < copies; i++) {
-      skillsData.forEach(s => track.appendChild(makeChip(s)));
-    }
-
-    return setW; // devuelve el tamaño de 1 set para el loop
-  }
-
-  let setW = buildTrack();
-
-  // ── Motor rAF ──
-  const SPEED_BASE  = 0.6;   // px/frame → ~36px/s a 60fps
-  const SPEED_HOVER = 0.07;  // casi parado al hover
-  const LERP        = 0.05;  // suavidad del arranque/frenado
-
-  let offset   = 0;
-  let speed    = 0;          // velocidad actual (interpolada)
-  let target   = SPEED_BASE;
-  let hovered  = false;
-  let dragging = false;
-  let dragX    = 0;
-  let dragOff  = 0;
-
-  function tick() {
-    if (!dragging) {
-      speed  += (target - speed) * LERP;
-      offset += speed;
-
-      // LOOP: cuando avanzamos 1 set completo, retrocedemos exactamente 1 set.
-      // Como el track tiene muchas copias idénticas detrás, el salto es invisible.
-      if (offset >= setW) offset -= setW;
-      if (offset < 0)     offset += setW;
-    }
-
-    track.style.transform = `translateX(${-offset}px)`;
-    requestAnimationFrame(tick);
-  }
-
-  requestAnimationFrame(tick);
-
-  // ── Hover: ralentizar suavemente ──
-  wrapper.addEventListener('mouseenter', () => { hovered = true;  target = SPEED_HOVER; });
-  wrapper.addEventListener('mouseleave', () => { hovered = false; if (!dragging) target = SPEED_BASE; });
-
-  // ── Drag ratón ──
-  wrapper.style.cursor = 'grab';
-
-  wrapper.addEventListener('mousedown', e => {
-    dragging = true;
-    dragX    = e.clientX;
-    dragOff  = offset;
-    speed    = 0;
-    target   = 0;
-    wrapper.style.cursor = 'grabbing';
-    e.preventDefault();
   });
-
-  window.addEventListener('mousemove', e => {
-    if (!dragging) return;
-    const delta = dragX - e.clientX;
-    offset = ((dragOff + delta) % setW + setW) % setW;
-    track.style.transform = `translateX(${-offset}px)`;
-  });
-
-  window.addEventListener('mouseup', () => {
-    if (!dragging) return;
-    dragging = false;
-    wrapper.style.cursor = 'grab';
-    target = hovered ? SPEED_HOVER : SPEED_BASE;
-  });
-
-  // ── Touch ──
-  wrapper.addEventListener('touchstart', e => {
-    dragging = true;
-    dragX    = e.touches[0].clientX;
-    dragOff  = offset;
-    speed    = 0;
-    target   = 0;
-  }, { passive: true });
-
-  window.addEventListener('touchmove', e => {
-    if (!dragging) return;
-    const delta = dragX - e.touches[0].clientX;
-    offset = ((dragOff + delta) % setW + setW) % setW;
-    track.style.transform = `translateX(${-offset}px)`;
-  }, { passive: true });
-
-  window.addEventListener('touchend', () => {
-    if (!dragging) return;
-    dragging = false;
-    target   = SPEED_BASE;
-  });
-
-  // ── Reconstruir si cambia el tamaño de ventana ──
-  window.addEventListener('resize', () => {
-    setW   = buildTrack();
-    offset = 0;
-  });
-})();
+}
 
 
 // ── REVEAL ──
@@ -384,51 +233,4 @@ const sObs = new IntersectionObserver(entries => {
 document.querySelectorAll('section[id]').forEach(s => sObs.observe(s));
 
 console.log('%c⚡ PORTFOLIO 2026', 'color:#00f5ff;font-family:monospace;font-size:1.5rem;font-weight:bold');
-
-// ── LIGHTBOX & SLIDER ──
-let lbImages = [];
-let lbIndex = 0;
-
-window.openLightbox = function(images, index=0) {
-  lbImages = images;
-  lbIndex = index;
-  document.getElementById('lightbox-img').src = lbImages[lbIndex];
-  document.getElementById('lightbox').classList.add('show');
-};
-
-window.closeLightbox = function() {
-  document.getElementById('lightbox').classList.remove('show');
-};
-
-window.changeLightboxImage = function(dir) {
-  lbIndex += dir;
-  if(lbIndex < 0) lbIndex = lbImages.length - 1;
-  else if(lbIndex >= lbImages.length) lbIndex = 0;
-  document.getElementById('lightbox-img').src = lbImages[lbIndex];
-};
-
-window.nextSlide = function(e, btn) {
-  e.stopPropagation();
-  const container = btn.parentElement;
-  const slides = container.querySelectorAll('.slide');
-  let current = 0;
-  slides.forEach((s, i) => {
-    if(s.classList.contains('active')) current = i;
-    s.classList.remove('active');
-  });
-  current = (current + 1) % slides.length;
-  slides[current].classList.add('active');
-};
-
-window.prevSlide = function(e, btn) {
-  e.stopPropagation();
-  const container = btn.parentElement;
-  const slides = container.querySelectorAll('.slide');
-  let current = 0;
-  slides.forEach((s, i) => {
-    if(s.classList.contains('active')) current = i;
-    s.classList.remove('active');
-  });
-  current = (current - 1 + slides.length) % slides.length;
-  slides[current].classList.add('active');
-};
+
