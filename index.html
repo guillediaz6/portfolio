@@ -6,190 +6,176 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GDM DEVELOPER · Desarrollo Web Profesional</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;800&display=swap"
-    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-
-
-  <canvas id="bg-canvas"></canvas>
-
-  <!-- LOADER -->
-  <div id="loader">
-    <div class="loader-logo">LOADING</div>
-    <div class="loader-bar-wrap">
-      <div class="loader-bar" id="loader-bar"></div>
+  <!-- LUXURY MENU OVERLAY -->
+  <div id="luxury-menu-overlay" class="luxury-menu-overlay">
+    <div class="luxury-menu-content">
+      <a href="#about" class="luxury-menu-link">Nosotros</a>
+      <a href="#portfolio" class="luxury-menu-link">Portfolio</a>
+      <a href="#experience" class="luxury-menu-link">Ventajas</a>
+      <a href="#contact" class="luxury-menu-link">Contacto</a>
     </div>
-    <div class="loader-text" id="loader-text">INICIALIZANDO SISTEMAS...</div>
   </div>
 
-  <!-- INTRO -->
-  <div id="intro-screen">
-    <canvas id="intro-canvas"></canvas>
-    <div class="intro-content">
-      <div class="profile-container" id="profile-container">
-        <div class="profile-glow"></div>
-        <div class="profile-ring"></div>
-        <div class="profile-img" id="profile-img">
-          <img src="assets/sprites/logo2.png" alt="GDM Developer">
+  <!-- FLOATING MENU BUTTON -->
+  <button id="luxury-menu-btn" class="luxury-menu-btn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <!-- LUXURY HERO -->
+  <header id="hero" class="premium-hero">
+    <div class="hero-bg-image" style="background-image: url('assets/sprites/portada.png');"></div>
+    <div class="hero-diagonal-overlay">
+      <svg class="hero-border-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="champagneLineHero" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#C8A96B" stop-opacity="0.2" />
+            <stop offset="50%" stop-color="#C8A96B" stop-opacity="0.95" />
+            <stop offset="100%" stop-color="#C8A96B" stop-opacity="0.2" />
+          </linearGradient>
+        </defs>
+        <line x1="100" y1="0" x2="75" y2="100" stroke="url(#champagneLineHero)" stroke-width="4" vector-effect="non-scaling-stroke" />
+      </svg>
+      <div class="hero-content">
+        <img src="assets/sprites/logo2.png" alt="GDM Developer" class="hero-logo">
+        <span class="hero-eyebrow">DESARROLLO WEB A MEDIDA</span>
+        <h1 class="hero-title">Diseñamos<br>experiencias<br>que <em>venden</em>.</h1>
+        <p class="hero-description">Creamos tu página web a medida para hacer crecer tu negocio, atraer nuevos clientes y destacar sobre tu competencia.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-solid-gold">Iniciar Proyecto</a>
+          <a href="#portfolio" class="btn-link-gold">Ver trabajos seleccionados</a>
         </div>
       </div>
-      <div class="intro-name">GDM.DEVELOPER</div>
-      <div class="intro-subtitle">SOLUCIONES WEB PARA EMPRESAS · DESARROLLO A MEDIDA · UI/UX</div>
-      <div class="click-hint">[ CLICK TO ENTER ]</div>
     </div>
-  </div>
+  </header>
 
-  <!-- PORTFOLIO -->
+  <!-- LÍNEA DORADA DEBAJO DE LA PORTADA Y ARRIBA DE QUIÉNES SOMOS -->
+  <div class="golden-header-separator"></div>
+
+  <!-- SECCIÓN QUIÉNES SOMOS -->
+  <section id="about">
+    <!-- EFECTO DIAGONAL SUPERIOR EN QUIÉNES SOMOS -->
+    <div class="about-diagonal-divider">
+      <svg class="about-diagonal-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="champagneLineAbout" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#C8A96B" stop-opacity="0.6" />
+            <stop offset="50%" stop-color="#C8A96B" stop-opacity="1" />
+            <stop offset="100%" stop-color="#C8A96B" stop-opacity="0.6" />
+          </linearGradient>
+        </defs>
+        <polygon points="0,0 100,0 100,100 0,20" fill="rgba(23, 25, 28, 0.6)" />
+        <line x1="0" y1="1" x2="100" y2="1" stroke="url(#champagneLineAbout)" stroke-width="3" vector-effect="non-scaling-stroke" />
+        <line x1="0" y1="20" x2="100" y2="100" stroke="url(#champagneLineAbout)" stroke-width="3" vector-effect="non-scaling-stroke" />
+      </svg>
+    </div>
+
+    <span class="section-number">01</span>
+    <div class="about-statement-wrapper" data-reveal="fade-up">
+      <img src="assets/sprites/logo2.png" alt="GDM Developer" class="about-logo-clean">
+      <p class="about-statement-text">
+        Somos <strong class="accent-text">GDM Developer</strong>, un estudio especializado en crear presencia digital de alto impacto que <strong class="accent-text">convierte visitantes en clientes</strong>.
+      </p>
+      <p class="about-statement-subtext">
+        Desde pequeños comercios hasta empresas de servicios, cuidamos cada detalle de tu proyecto. Tu web es tu comercial más valioso: trabaja para ti las 24 horas del día.
+      </p>
+    </div>
+  </section>
+
+  <!-- LÍNEA DORADA DELIMITADORA DEBAJO DE QUIÉNES SOMOS -->
+  <div class="golden-header-separator"></div>
+
+  <!-- SECCIONES CON FONDO fondo.png -->
   <div id="main-portfolio">
-    <nav id="main-nav">
-      <a href="#hero" class="nav-logo" style="display:flex; align-items:center;">
-        <img src="assets/sprites/logo2.png" alt="GDM Developer" style="height: 40px; width: auto; object-fit: contain; transform: scale(2.2); transform-origin: left center;">
-      </a>
-      <div class="hamburger" id="hamburger">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#about">SOBRE MÍ</a></li>
-        <li><a href="#skills">SKILLS</a></li>
-        <li><a href="#experience">FORMACIÓN</a></li>
-        <li><a href="#contact">CONTACTO</a></li>
-      </ul>
-    </nav>
-
-    <!-- HERO -->
-    <section id="hero">
-      
-      <div class="hero-eyebrow" id="hero-eyebrow">◈ IMPULSA TU NEGOCIO EN DIGITAL ◈</div>
-      <h1 class="hero-title" id="hero-title">
-        <span class="line1">DESARROLLO</span>
-        <span class="line2">WEB PROFESIONAL</span>
-      </h1>
-      <p class="hero-sub" id="hero-sub">SOLUCIONES DIGITALES QUE ESCALAN TU EMPRESA</p>
-      <div class="hero-cta" id="hero-cta">
-        <a href="#contact" class="btn-primary"><span>INICIAR PROYECTO →</span></a>
-        <a href="#about" class="btn-secondary">CONOCER MÁS</a>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about">
-      
-      <span class="section-number">01</span>
-      <div class="about-grid">
-        <div data-reveal="fade-right">
-          <div class="about-card">
-            <div class="about-avatar">
-              <div class="cube">
-                <div class="face front" style="background-image: url('assets/sprites/logo2.png');"></div>
-                <div class="face back" style="background-image: url('assets/sprites/logo2.png');"></div>
-                <div class="face right" style="background-image: url('assets/sprites/logo2.png');"></div>
-                <div class="face left" style="background-image: url('assets/sprites/logo2.png');"></div>
-                <div class="face top" style="background-image: url('assets/sprites/logo2.png');"></div>
-                <div class="face bottom" style="background-image: url('assets/sprites/logo2.png');"></div>
-              </div>
-            </div>
-            <div class="about-stats">
-              <div class="stat-item"><span class="stat-number" data-count="10">0</span><span
-                  class="stat-label">Proyectos</span></div>
-              <div class="stat-item"><span class="stat-number" data-count="8">0</span><span
-                  class="stat-label">Tecnologías</span></div>
-            </div>
-          </div>
-        </div>
-        <div data-reveal="fade-left">
-          <h2 class="section-title">HOLA,<br>SOY <span class="accent">GDM DEVELOPER</span></h2>
-          <p class="about-text">Soy un <strong>desarrollador web y programador</strong> especializado en ayudar a empresas a potenciar su presencia digital. Creo páginas web corporativas y plataformas a medida que generan resultados reales.</p>
-          <p class="about-text">Mi objetivo es ofrecer <strong>soluciones tecnológicas</strong> que optimicen tus procesos y conecten con tus clientes. Transformo las necesidades de tu negocio en herramientas digitales eficientes y escalables.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- SKILLS GRID -->
-    <section id="skills">
-      
-      <span class="section-number">02</span>
-      <div style="text-align:center;width:100%" data-reveal="fade-up">
-        <h2 class="section-title" style="text-align:center">ARSENAL<br><span class="accent">TÉCNICO_</span></h2>
-      </div>
-      <div class="skills-grid-container" data-reveal="fade-up" style="transition-delay:.1s">
-        <div id="interactive-skills-grid"></div>
-      </div>
-    </section>
-
-
-
-    <!-- STUDENT FORMATION -->
+    <!-- POR QUÉ ELEGIRNOS -->
     <section id="experience">
-      
-      <span class="section-number">04</span>
-      <div style="width:100%; max-width:1100px">
-        <div data-reveal="fade-up" style="margin-bottom:60px">
-          <h2 class="section-title">POR QUÉ<br><span class="accent">ELEGIRME_</span></h2>
+      <span class="section-number">02</span>
+      <div class="experience-column-container">
+        <div data-reveal="fade-up" style="margin-bottom:90px; text-align:center">
+          <h2 class="impact-headline">
+            ¿NECESITAS UNA WEB PARA TU NEGOCIO<br>PERO DUDAS EN QUIÉN CONFIAR?
+          </h2>
         </div>
-        <div class="exp-grid">
-          <!-- Tarjetas de valor -->
-          <div class="value-card" data-reveal="fade-up" style="transition-delay:.05s">
-            <span class="value-icon">📈</span>
-            <div class="value-title">CRECIMIENTO DIGITAL</div>
-            <p class="value-desc">Páginas web diseñadas no solo para verse bien, sino para captar clientes y aumentar las conversiones de tu empresa.</p>
-          </div>
-          <div class="value-card" data-reveal="fade-up" style="transition-delay:.1s">
-            <span class="value-icon">🤝</span>
-            <div class="value-title">SOCIO TECNOLÓGICO</div>
-            <p class="value-desc">Más que un proveedor, trabajo contigo para entender tu modelo de negocio y ofrecerte la mejor herramienta web.</p>
-          </div>
-          <div class="value-card" data-reveal="fade-up" style="transition-delay:.15s">
-            <span class="value-icon">🛠️</span>
-            <div class="value-title">DESARROLLO A MEDIDA</div>
-            <p class="value-desc">Sistemas personalizados, desde webs corporativas hasta plataformas de gestión interna totalmente adaptables.</p>
-          </div>
-          <div class="value-card" data-reveal="fade-up" style="transition-delay:.2s">
-            <span class="value-icon">🔒</span>
-            <div class="value-title">SOPORTE Y SEGURIDAD</div>
-            <p class="value-desc">Garantizo que tu plataforma esté siempre operativa, segura y escalable a medida que tu negocio crece.</p>
+        <div class="value-column-list">
+          
+          <div class="value-row-item" data-reveal="fade-up">
+            <img src="assets/sprites/resultados reales.png" alt="Resultados Reales" class="value-row-img">
+            <h3 class="value-row-title">RESULTADOS REALES</h3>
+            <p class="value-row-desc">No hacemos webs bonitas y ya. Diseñamos para que tu negocio capte más clientes y aumente sus ventas online.</p>
           </div>
 
-          <!-- Formación DAM -->
-          <div class="formation-card" data-reveal="fade-up" style="transition-delay:.25s">
-            <div style="flex-shrink:0">
-              <div class="formation-year">2024</div>
-              <div class="formation-badge">Finalizado</div>
-            </div>
-            <div>
-              <div class="formation-degree">DESARROLLO DE APLICACIONES MULTIPLATAFORMA</div>
-              <div class="formation-school">◈ IES EL RINCON</div>
-              <p class="formation-desc">Formación técnica en desarrollo web full stack, complementada con práctica
-                autónoma en proyectos personales.</p>
-              <div class="formation-skills">
-                <span class="f-skill">React</span><span class="f-skill">JavaScript</span><span
-                  class="f-skill">Node.js</span>
-                <span class="f-skill">SQL</span><span class="f-skill">APIs REST</span><span class="f-skill">Git</span>
+          <div class="value-row-item" data-reveal="fade-up">
+            <img src="assets/sprites/trato directo.png" alt="Trato Directo" class="value-row-img">
+            <h3 class="value-row-title">TRATO DIRECTO</h3>
+            <p class="value-row-desc">Sin intermediarios. Hablas directamente con quien diseña y programa tu web. Comunicación rápida y sin complicaciones.</p>
+          </div>
+
+          <div class="value-row-item" data-reveal="fade-up">
+            <img src="assets/sprites/diseño a medida.png" alt="Diseño a Medida" class="value-row-img">
+            <h3 class="value-row-title">DISEÑO A MEDIDA</h3>
+            <p class="value-row-desc">Nada de plantillas. Cada web la creamos desde cero, adaptada a la imagen y necesidades de tu negocio.</p>
+          </div>
+
+          <div class="value-row-item" data-reveal="fade-up">
+            <img src="assets/sprites/entrega rapida.png" alt="Entrega Rápida" class="value-row-img">
+            <h3 class="value-row-title">ENTREGA RÁPIDA</h3>
+            <p class="value-row-desc">Tu web lista en tiempo récord. Nos comprometemos con plazos realistas y los cumplimos.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO SHOWCASE -->
+    <section id="portfolio">
+      
+      <span class="section-number">03</span>
+      <div style="width:100%;">
+
+        <div class="portfolio-grid">
+
+          <div class="portfolio-card" data-reveal="fade-up" style="transition-delay:.05s">
+            <div class="portfolio-img-wrap">
+              <img src="assets/sprites/cafeteriananay.png" alt="Cafetería Nanay" class="portfolio-img">
+              <div class="portfolio-overlay">
+                <a href="https://cafeteriananay.es" target="_blank" class="portfolio-btn"><span>VER SITIO WEB →</span></a>
               </div>
             </div>
           </div>
 
-          <!-- Formación Ciberseguridad -->
-          <div class="formation-card" data-reveal="fade-up" style="transition-delay:.3s">
-            <div style="flex-shrink:0">
-              <div class="formation-year">2026</div>
-              <div class="formation-badge">En curso</div>
-            </div>
-            <div>
-              <div class="formation-degree">ESPECIALIZACIÓN CIBERSEGURIDAD</div>
-              <div class="formation-school">◈ IES EL RINCON</div>
-              <p class="formation-desc">Especialización en seguridad informática, ethical hacking y protección de
-                sistemas.</p>
-              <div class="formation-skills">
-                <!-- Vacío por ahora -->
+          <div class="portfolio-card" data-reveal="fade-up" style="transition-delay:.1s">
+            <div class="portfolio-img-wrap">
+              <img src="assets/sprites/franchybarber.png" alt="Franchy Barber" class="portfolio-img">
+              <div class="portfolio-overlay">
+                <a href="https://franchybarber.es" target="_blank" class="portfolio-btn"><span>VER SITIO WEB →</span></a>
               </div>
             </div>
           </div>
+
+          <div class="portfolio-card" data-reveal="fade-up" style="transition-delay:.15s">
+            <div class="portfolio-img-wrap">
+              <img src="assets/sprites/teamromerobrothers.png" alt="Team Romero Brothers" class="portfolio-img">
+              <div class="portfolio-overlay">
+                <a href="https://teamromerobrothers.es" target="_blank" class="portfolio-btn"><span>VER SITIO WEB →</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-card" data-reveal="fade-up" style="transition-delay:.2s">
+            <div class="portfolio-img-wrap">
+              <img src="assets/sprites/asistecontraincendioslp.png" alt="Asiste Contra Incendios LP" class="portfolio-img">
+              <div class="portfolio-overlay">
+                <a href="https://asistecontraincendioslp.es" target="_blank" class="portfolio-btn"><span>VER SITIO WEB →</span></a>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -197,58 +183,96 @@
     <!-- CONTACT -->
     <section id="contact">
       
-      <span class="section-number">05</span>
-      <div class="contact-center" data-reveal="scale">
-        <h2 class="section-title" style="text-align:center">INICIAR<br><span class="accent">CONEXIÓN_</span></h2>
-        <p class="contact-tagline">¿LISTO PARA DIGITALIZAR TU EMPRESA Y AUMENTAR TUS VENTAS?<br>HABLEMOS DE TU PRÓXIMO PROYECTO WEB.</p>
-
-        <a href="mailto:guillermodiazm13@gmail.com" class="gmail-btn">
-          <svg class="gmail-icon" viewBox="0 0 48 48">
-            <path fill="#EA4335" d="M5 36.6V11.4L24 25z" />
-            <path fill="#FBBC04" d="M43 11.4v25.2l-19-13.6z" />
-            <path fill="#34A853" d="M43 36.6H5l19-13.4z" />
-            <path fill="#4285F4" d="M5 11.4l19 13.6 19-13.6H5z" />
-            <path fill="#C5221F" d="M5 11.4V8.5L24 22.1 43 8.5v2.9L24 25z" />
-          </svg>
-          <span>ENVIAR EMAIL</span>
-        </a>
-
-        <div class="contact-alts">
-          <a href="https://github.com/guillediaz6" target="_blank" class="alt-link">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.04c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0024 12c0-6.63-5.37-12-12-12z" />
-            </svg>
-            GITHUB
-          </a>
-          <a href="https://www.linkedin.com/in/guillermo-diaz-medina-51a284367/" target="_blank" class="alt-link">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM3.56 20.45h3.56V9H3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" />
-            </svg>
-            LINKEDIN
-          </a>
-          <a href="https://instagram.com/gdm.developer" target="_blank" class="alt-link">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.31.975.975 1.248 2.242 1.31 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.31 3.608-.975.975-2.242 1.248-3.608 1.31-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.31-.975-.975-1.248-2.242-1.31-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.334-2.633 1.31-3.608.975-.975 2.242-1.248 3.608-1.31 1.266-.058 1.646-.07 4.85-.07zm0-2.163C8.756 0 8.332.014 7.052.072 5.197.157 3.355.786 1.964 2.177.573 3.568-.056 5.41.028 7.267.086 8.547.1 8.971.1 12s-.014 3.453-.072 4.733c-.084 1.857.455 3.699 1.846 5.09 1.391 1.391 3.233 1.93 5.09 1.846 1.28.058 1.704.072 4.733.072s3.453-.014 4.733-.072c1.857-.084 3.699-.455 5.09-1.846 1.391-1.391 1.93-3.233 1.846-5.09.058-1.28.072-1.704.072-4.733s-.014-3.453-.072-4.733c-.084-1.857-.455-3.699-1.846-5.09C20.645.786 18.803.157 16.946.073 15.666.015 15.242.001 12 .001z" />
-              <circle cx="18.406" cy="5.594" r="1.44" />
-              <path
-                d="M12 5.838A6.162 6.162 0 0 0 5.838 12 6.162 6.162 0 0 0 12 18.162 6.162 6.162 0 0 0 18.162 12 6.162 6.162 0 0 0 12 5.838zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8z" />
-            </svg>
-            INSTAGRAM
-          </a>
+      <span class="section-number">04</span>
+      <div class="contact-container" data-reveal="fade-up">
+        
+        <div class="contact-header">
+          <h2 class="impact-headline">
+            ¿TIENES UN PROYECTO EN MENTE? CUÉNTANOS TU IDEA SIN NINGÚN COMPROMISO
+          </h2>
+          <p class="contact-tagline" style="margin-top: 25px;">Escríbenos en el formulario o por Instagram y te respondemos con una propuesta a medida en menos de 24 horas.</p>
         </div>
+
+        <div class="contact-grid">
+          <!-- FORMULARIO DE CONTACTO -->
+          <form action="mailto:guillermodiazm13@gmail.com" method="POST" enctype="text/plain" class="luxury-contact-form">
+            <div class="form-group">
+              <label for="name">Nombre / Nombre de tu negocio</label>
+              <input type="text" id="name" name="Nombre" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Tu Email de contacto</label>
+              <input type="email" id="email" name="Email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">¿Qué tipo de web buscas?</label>
+              <textarea id="message" name="Mensaje" rows="4" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn-solid-gold form-submit-btn">
+              ENVIAR SOLICITUD
+            </button>
+          </form>
+
+          <!-- TARJETA PERFIL INSTAGRAM -->
+          <div class="instagram-card">
+            <div class="ig-card-header">
+              <div class="ig-avatar-wrap">
+                <img src="assets/sprites/logo2.png" alt="GDM Developer" class="ig-avatar">
+              </div>
+              <div class="ig-profile-info">
+                <div class="ig-handle">
+                  <span>gdm.developer</span>
+                  <svg class="ig-badge" viewBox="0 0 24 24" fill="#C8A96B"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                </div>
+                <p class="ig-bio">Diseño & Desarrollo Web Premium<br>Webs de alto impacto para marcas y negocios.</p>
+              </div>
+            </div>
+
+            <div class="ig-stats">
+              <div class="ig-stat-item">
+                <span class="ig-stat-num">Webs</span>
+                <span class="ig-stat-label">A medida</span>
+              </div>
+              <div class="ig-stat-item">
+                <span class="ig-stat-num">Trato</span>
+                <span class="ig-stat-label">Directo</span>
+              </div>
+              <div class="ig-stat-item">
+                <span class="ig-stat-num">Entrega</span>
+                <span class="ig-stat-label">Rápida</span>
+              </div>
+            </div>
+
+            <a href="https://instagram.com/gdm.developer" target="_blank" class="ig-follow-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.31.975.975 1.248 2.242 1.31 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.31 3.608-.975.975-2.242 1.248-3.608 1.31-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.31-.975-.975-1.248-2.242-1.31-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.334-2.633 1.31-3.608.975-.975 2.242-1.248 3.608-1.31 1.266-.058 1.646-.07 4.85-.07zm0-2.163C8.756 0 8.332.014 7.052.072 5.197.157 3.355.786 1.964 2.177.573 3.568-.056 5.41.028 7.267.086 8.547.1 8.971.1 12s-.014 3.453-.072 4.733c-.084 1.857.455 3.699 1.846 5.09 1.391 1.391 3.233 1.93 5.09 1.846 1.28.058 1.704.072 4.733.072s3.453-.014 4.733-.072c1.857-.084 3.699-.455 5.09-1.846 1.391-1.391 1.93-3.233 1.846-5.09.058-1.28.072-1.704.072-4.733s-.014-3.453-.072-4.733c-.084-1.857-.455-3.699-1.846-5.09C20.645.786 18.803.157 16.946.073 15.666.015 15.242.001 12 .001z"/>
+                <circle cx="18.406" cy="5.594" r="1.44"/>
+                <path d="M12 5.838A6.162 6.162 0 0 0 5.838 12 6.162 6.162 0 0 0 12 18.162 6.162 6.162 0 0 0 18.162 12 6.162 6.162 0 0 0 12 5.838zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/>
+              </svg>
+              <span>SÍGUENOS EN INSTAGRAM</span>
+            </a>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
+      <div class="golden-header-separator"></div>
       <p class="footer-copy">© 2026 GDM DEVELOPER</p>
     </footer>
   </div>
 
-
+  <!-- MASCOTA WIDGET -->
+  <div id="mascota-widget" class="mascota-widget">
+    <img src="assets/sprites/mascota.png" class="mascota-img" alt="Mascota">
+    <button id="mascota-play-btn" class="mascota-play-btn">⏸</button>
+    <audio id="mascota-audio" src="assets/audiomascota.mp3"></audio>
+  </div>
 
   <!-- Progress bar -->
   <div id="pb"></div>
@@ -259,3 +283,4 @@
 </body>
 
 </html>
+
