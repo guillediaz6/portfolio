@@ -2917,6 +2917,49 @@ footer {
 
 
 
+/* RESPONSIVE PORTADA (HERO) PARA PORTATILES */
+@media (min-width: 901px) and (max-width: 1440px) {
+  .hero-diagonal-overlay {
+    width: 60%;
+    padding: 0 5vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .hero-content {
+    max-width: 450px;
+    margin-top: 0;
+    position: relative;
+    padding-top: 160px;
+  }
+  .hero-logo {
+    max-width: 220px;
+    position: absolute;
+    top: -120px;
+    left: 0;
+    margin-bottom: 0;
+  }
+  .hero-eyebrow {
+    margin-bottom: 15px;
+  }
+  .hero-title {
+    font-size: clamp(2.5rem, 3.5vw, 3.5rem);
+    margin-bottom: 20px;
+    line-height: 1.1;
+  }
+  .hero-description {
+    font-size: 0.95rem;
+    max-width: 400px;
+    margin-bottom: 30px;
+  }
+  .hero-actions {
+    gap: 15px;
+  }
+  .btn-solid-gold {
+    padding: 14px 24px;
+  }
+}
+
 /* RESPONSIVE PORTADA (HERO) Y QUIÉNES SOMOS (ABOUT) - RÉPLICA EXACTA DE PC EN MINIATURA */
 @media (max-width: 900px) {
   /* HERO PORTADA EN MINIATURA */
